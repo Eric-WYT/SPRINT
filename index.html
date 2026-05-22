@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta name="description" content="DESCRIPTION META TAG">
+    <meta property="og:title" content="SOCIAL MEDIA TITLE TAG">
+    <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG">
+    <meta property="og:url" content="URL OF THE WEBSITE">
+    <meta property="og:image" content="static/image/your_banner_image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
+    <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
+    <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>SPRINT: Efficient Spectral Priors for Humanoid Athletic Sprints</title>
+
+    <style type="text/css">
+        svg:not(:root).svg-inline--fa {
+            overflow: visible
+        }
+
+        .svg-inline--fa {
+            display: inline-block;
+            font-size: inherit;
+            height: 1em;
+            overflow: visible;
+            vertical-align: -.125em
+        }
+
+        .fa-lg {
+            font-size: 1.3333333333em;
+            line-height: .75em;
+            vertical-align: -.0667em
+        }
+
+        .fa-xs {
+            font-size: .75em
+        }
+
+        .fa-sm {
+            font-size: .875em
+        }
+
+        .fa-1x {
+            font-size: 1em
+        }
+
+        .fa-2x {
+            font-size: 2em
+        }
+
+        .fa-3x {
+            font-size: 3em
+        }
+
+        .fa-4x {
+            font-size: 4em
+        }
+
+        .fa-5x {
+            font-size: 5em
+        }
+
+        .fa-6x {
+            font-size: 6em
+        }
+
+        .fa-7x {
+            font-size: 7em
+        }
+
+        .fa-8x {
+            font-size: 8em
+        }
+
+        .fa-9x {
+            font-size: 9em
+        }
+
+        .fa-10x {
+            font-size: 10em
+        }
+
+        .fa-fw {
+            text-align: center;
+            width: 1.25em
+        }
+
+        .fa-ul {
+            list-style-type: none;
+            margin-left: 2.5em;
+            padding-left: 0
+        }
+
+            .fa-ul > li {
+                position: relative
+            }
+
+        .fa-li {
+            left: -2em;
+            position: absolute;
+            text-align: center;
+            width: 2em;
+            line-height: inherit
+        }
+
+        .fa-border {
+            border: solid .08em #eee;
+            border-radius: .1em;
+            padding: .2em .25em .15em
+        }
+
+        .fa-pull-left {
+            float: left
+        }
+
+        .fa-pull-right {
+            float: right
+        }
+
+        .fa.fa-pull-left, .fab.fa-pull-left, .fal.fa-pull-left, .far.fa-pull-left, .fas.fa-pull-left {
+            margin-right: .3em
+        }
+
+        .fa.fa-pull-right, .fab.fa-pull-right, .fal.fa-pull-right, .far.fa-pull-right, .fas.fa-pull-right {
+            margin-left: .3em
+        }
+
+        .fa-spin {
+            -webkit-animation: fa-spin 2s infinite linear;
+            animation: fa-spin 2s infinite linear
+        }
+
+        .fa-pulse {
+            -webkit-animation: fa-spin 1s infinite steps(8);
+            animation: fa-spin 1s infinite steps(8)
+        }
+
+        @-webkit-keyframes fa-spin {
+            0% {
+                -webkit-transform: rotate(0);
+                transform: rotate(0)
+            }
+
+            100% {
+                -webkit-transform: rotate(360deg);
+                transform: rotate(360deg)
+            }
+        }
+
+        @keyframes fa-spin {
+            0% {
+                -webkit-transform: rotate(0);
+                transform: rotate(0)
+            }
+
+            100% {
+                -webkit-transform: rotate(360deg);
+                transform: rotate(360deg)
+            }
+        }
+
+        .sr-only {
+            border: 0;
+            clip: rect(0,0,0,0);
+            height: 1px;
+            margin: -1px;
+            overflow: hidden;
+            padding: 0;
+            position: absolute;
+            width: 1px
+        }
+
+        .sr-only-focusable:active, .sr-only-focusable:focus {
+            clip: auto;
+            height: auto;
+            margin: 0;
+            overflow: visible;
+            position: static;
+            width: auto
+        }
+
+        /* The Grey Box applied to logical sections */
+        .exp-box {
+            background-color: #f5f5f5; /* Matches the Abstract's is-light background */
+            border-radius: 1.5rem;
+            padding: 3rem 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .exp-part-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #4a4a4a;
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .exp-row {
+            margin-bottom: 2.5rem;
+        }
+
+        .exp-row-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #4a4a4a;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .video-grid-clean {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+
+        .video-item-clean {
+            flex: 1 1 30%;
+            min-width: 250px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .video-item-half {
+            flex: 1 1 45%;
+            min-width: 320px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+            .video-item-clean video, .video-item-half video {
+                width: 100%;
+                border-radius: 12px;
+                background-color: #000;
+                box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            }
+
+        .video-caption {
+            margin-top: 0.75rem;
+            font-size: 1rem;
+            color: #666666;
+            font-weight: 500;
+        }
+    </style>
+
+    <!-- 强制不加载 favicon -->
+    <link rel="icon" href="data:,">
+
+    <!-- CSS CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.3/dist/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma-slider@2.0.4/dist/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+
+    <!-- 本地自定义 CSS -->
+    <link rel="stylesheet" href="./static/index.css">
+
+    <!-- JS CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.3/dist/js/bulma-carousel.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bulma-slider@2.0.4/dist/js/bulma-slider.min.js"></script>
+
+    <!-- 本地自定义 JS -->
+    <script src="./static/index.js"></script>
+
+</head>
+<body>
+
+    <!-- Hero Section with Background Video -->
+    <section class="hero is-fullheight" style="position: relative; overflow: hidden;">
+        <!-- Background Video -->
+        <video playsinline="" autoplay="" muted="" loop="" style="position: absolute; top: 50%; left: 50%; min-width: 100%; min-height: 100%; width: auto; height: auto; transform: translate(-50%, -50%); z-index: -2; object-fit: cover;">
+            <source src="./static/SPRINT_cover_0522.mp4" type="video/mp4">
+        </video>
+        <!-- Overlay for better text readability -->
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.4); z-index: -1;"></div>
+
+        <!-- Aligned to bottom using align-items: flex-end -->
+        <div class="hero-body" style="z-index: 1; align-items: flex-end; padding-bottom: 8rem;">
+            <div class="container has-text-centered">
+                <h1 class="title is-1 publication-title is-size-1-mobile" style="font-size: 8rem; margin-bottom: 1rem; color: #ffffff; text-shadow: 2px 2px 8px rgba(0,0,0,0.7);">
+                    SPRINT:
+                </h1>
+                <h1 class="subtitle is-1 publication-title is-size-4-mobile" style="font-size: 3rem; color: #ffffff; text-shadow: 1px 1px 6px rgba(0,0,0,0.7);">
+                    Efficient Spectral Priors for Humanoid Athletic Sprints
+                </h1>
+                <div class="is-size-5 publication-authors" style="margin-top: 1.5rem;">
+                    <span class="author-block">
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Abstract Section -->
+    <section class="section hero is-light">
+        <div class="container">
+            <div class="columns is-centered has-text-centered">
+                <div class="column is-four-fifths">
+                    <!-- Abstract 标题样式 -->
+                    <h2 class="title is-2" style="text-align: center; padding-bottom: 30px;">Abstract</h2>
+                    <div class="content has-text-justified">
+                        <p style="font-size: 18px;">
+                            The pursuit of highly dynamic humanoid sprinting is currently hindered by a scarcity of humanoid-viable kinematic reference data and the inability of existing frameworks to maintain stability during sprints. To overcome these limitations, this paper introduces SPRINT, a novel framework driven by highly efficient, frequency-adaptive spectral priors. By characterizing the fundamental periodicity of human locomotion in the frequency domain using a reference library of exactly five discrete motion sequences, these priors generate kinematically feasible joint trajectories across a broad velocity spectrum, successfully extrapolating far beyond the reference distribution. Guided by these pretrained priors, the SPRINT policy achieves zero-shot sim-to-real transfer in field experiments on the 1.3 m Humanoid Robot platform, reaching a peak sprinting velocity of 6\,m/s and demonstrating seamless gait transitions while preserving biomimetic naturalness. Ultimately, this work establishes frequency-adaptive spectral priors as a highly data-efficient foundation for humanoid athletic sprints.
+                        </p>
+                    </div>
+
+                    <!-- Added SVG Image after Abstract narrative -->
+                    <div class="has-text-centered" style="margin-top: 3rem;">
+                        <img src="./static/PNN_network_newest.svg" alt="SPRINT Network Architecture" style="max-width: 100%; height: auto; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experiments Section -->
+    <section class="section">
+        <div class="container is-max-desktop">
+            <!-- 修改了 Experiments 的标题样式，使其与 Abstract 完全一致 -->
+            <h2 class="title is-2" style="text-align: center; padding-bottom: 30px;">Experiments</h2>
+
+            <!-- Part I in Grey Box -->
+            <div class="exp-box">
+                <h3 class="exp-part-title">I. Cross-Platform Morphological Adaptability of Frequency-Adaptive Spectral Priors</h3>
+
+                <!-- 0.6Hz -->
+                <div class="exp-row">
+                    <h4 class="exp-row-title">Slow Walking (0.6Hz)</h4>
+                    <div class="video-grid-clean">
+                        <div class="video-item-clean">
+                            <video controls muted loop playsinline>
+                                <source src="./static/robot_h1_2_0.6Hz.mp4" type="video/mp4">
+                            </video>
+                            <div class="video-caption">1.7 m Humanoid Robot</div>
+                        </div>
+                        <div class="video-item-clean">
+                            <video controls muted loop playsinline>
+                                <source src="./static/robot_g1_0.6Hz.mp4" type="video/mp4">
+                            </video>
+                            <div class="video-caption">1.3 m Humanoid Robot</div>
+                        </div>
+                        <div class="video-item-clean">
+                            <video controls muted loop playsinline>
+                                <source src="./static/robot_zhixing_0.6Hz.mp4" type="video/mp4">
+                            </video>
+                            <div class="video-caption">1.1 m Humanoid Robot</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 0.68Hz -->
+                <div class="exp-row">
+                    <h4 class="exp-row-title">Walking (0.68Hz)</h4>
+                    <div class="video-grid-clean">
+                        <div class="video-item-clean">
+                            <video controls muted loop playsinline>
+                                <source src="./static/robot_h1_2_0.68Hz.mp4" type="video/mp4">
+                            </video>
+                            <div class="video-caption">1.7 m Humanoid Robot</div>
+                        </div>
+                        <div class="video-item-clean">
+                            <video controls muted loop playsinline>
+                                <source src="./static/robot_g1_0.68Hz.mp4" type="video/mp4">
+                            </video>
+                            <div class="video-caption">1.3 m Humanoid Robot</div>
+                        </div>
+                        <div class="video-item-clean">
+                            <video controls muted loop playsinline>
+                                <source src="./static/robot_zhixing_0.68Hz.mp4" type="video/mp4">
+                            </video>
+                            <div class="video-caption">1.1 m Humanoid Robot</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 0.97Hz -->
+                <div class="exp-row">
+                    <h4 class="exp-row-title">Fast Walking (0.97Hz)</h4>
+                    <div class="video-grid-clean">
+                        <div class="video-item-clean">
+                            <video controls muted loop playsinline>
+                                <source src="./static/robot_h1_2_0.97Hz.mp4" type="video/mp4">
+                            </video>
+                            <div class="video-caption">1.7 m Humanoid Robot</div>
+                        </div>
+                        <div class="video-item-clean">
+                            <video controls muted loop playsinline>
+                                <source src="./static/robot_g1_0.97Hz.mp4" type="video/mp4">
+                            </video>
+                            <div class="video-caption">1.3 m Humanoid Robot</div>
+                        </div>
+                        <div class="video-item-clean">
+                            <video controls muted loop playsinline>
+                                <source src="./static/robot_zhixing_0.97Hz.mp4" type="video/mp4">
+                            </video>
+                            <div class="video-caption">1.1 m Humanoid Robot</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 1.25Hz -->
+                <div class="exp-row">
+                    <h4 class="exp-row-title">Jogging (1.25Hz)</h4>
+                    <div class="video-grid-clean">
+                        <div class="video-item-clean">
+                            <video controls muted loop playsinline>
+                                <source src="./static/robot_h1_2_1.25Hz.mp4" type="video/mp4">
+                            </video>
+                            <div class="video-caption">1.7 m Humanoid Robot</div>
+                        </div>
+                        <div class="video-item-clean">
+                            <video controls muted loop playsinline>
+                                <source src="./static/robot_g1_1.25Hz.mp4" type="video/mp4">
+                            </video>
+                            <div class="video-caption">1.3 m Humanoid Robot</div>
+                        </div>
+                        <div class="video-item-clean">
+                            <video controls muted loop playsinline>
+                                <source src="./static/robot_zhixing_1.25Hz.mp4" type="video/mp4">
+                            </video>
+                            <div class="video-caption">1.1 m Humanoid Robot</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 1.41Hz -->
+                <div class="exp-row">
+                    <h4 class="exp-row-title">Slow Running (1.41Hz)</h4>
+                    <div class="video-grid-clean">
+                        <div class="video-item-clean">
+                            <video controls muted loop playsinline>
+                                <source src="./static/robot_h1_2_1.41Hz.mp4" type="video/mp4">
+                            </video>
+                            <div class="video-caption">1.7 m Humanoid Robot</div>
+                        </div>
+                        <div class="video-item-clean">
+                            <video controls muted loop playsinline>
+                                <source src="./static/robot_g1_1.41Hz.mp4" type="video/mp4">
+                            </video>
+                            <div class="video-caption">1.3 m Humanoid Robot</div>
+                        </div>
+                        <div class="video-item-clean">
+                            <video controls muted loop playsinline>
+                                <source src="./static/robot_zhixing_1.41Hz.mp4" type="video/mp4">
+                            </video>
+                            <div class="video-caption">1.1 m Humanoid Robot</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 1.58Hz -->
+                <div class="exp-row">
+                    <h4 class="exp-row-title">Fast Running (1.58Hz)</h4>
+                    <div class="video-grid-clean">
+                        <div class="video-item-clean">
+                            <video controls muted loop playsinline>
+                                <source src="./static/robot_h1_2_1.58Hz.mp4" type="video/mp4">
+                            </video>
+                            <div class="video-caption">1.7 m Humanoid Robot</div>
+                        </div>
+                        <div class="video-item-clean">
+                            <video controls muted loop playsinline>
+                                <source src="./static/robot_g1_1.58Hz.mp4" type="video/mp4">
+                            </video>
+                            <div class="video-caption">1.3 m Humanoid Robot</div>
+                        </div>
+                        <div class="video-item-clean">
+                            <video controls muted loop playsinline>
+                                <source src="./static/robot_zhixing_1.58Hz.mp4" type="video/mp4">
+                            </video>
+                            <div class="video-caption">1.1 m Humanoid Robot</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2.3Hz -->
+                <div class="exp-row" style="margin-bottom: 0;">
+                    <h4 class="exp-row-title">Sprinting (2.3Hz)</h4>
+                    <div class="video-grid-clean">
+                        <div class="video-item-clean">
+                            <video controls muted loop playsinline>
+                                <source src="./static/robot_h1_2_2.3Hz.mp4" type="video/mp4">
+                            </video>
+                            <div class="video-caption">1.7 m Humanoid Robot</div>
+                        </div>
+                        <div class="video-item-clean">
+                            <video controls muted loop playsinline>
+                                <source src="./static/robot_g1_2.3Hz.mp4" type="video/mp4">
+                            </video>
+                            <div class="video-caption">1.3 m Humanoid Robot</div>
+                        </div>
+                        <div class="video-item-clean">
+                            <video controls muted loop playsinline>
+                                <source src="./static/robot_zhixing_2.3Hz.mp4" type="video/mp4">
+                            </video>
+                            <div class="video-caption">1.1 m Humanoid Robot</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Part II in Grey Box -->
+            <div class="exp-box">
+                <h3 class="exp-part-title">II. SPRINT Policy in Simulation</h3>
+                <div class="video-grid-clean">
+                    <div class="video-item-half">
+                        <video controls muted loop playsinline>
+                            <source src="./static/Transition.mp4" type="video/mp4">
+                        </video>
+                        <div class="video-caption">Continuous Gait Transitions</div>
+                    </div>
+                    <div class="video-item-half">
+                        <video controls muted loop playsinline>
+                            <source src="./static/SPRINT_simulation_0522.mp4" type="video/mp4">
+                        </video>
+                        <div class="video-caption">High-Speed Sprinting</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Part III in Grey Box -->
+            <div class="exp-box" style="margin-bottom: 2rem;">
+                <h3 class="exp-part-title">III. SPRINT Policy in Real World</h3>
+                <!-- Modified to properly format the single video -->
+                <div class="video-grid-clean">
+                    <div class="video-item-clean" style="flex: 1 1 100%; max-width: 800px; margin: 0 auto;">
+                        <video controls muted loop playsinline>
+                            <source src="./static/speed_transition.mp4" type="video/mp4">
+                        </video>
+                        <div class="video-caption">Zero-Shot Sim-to-Real Transfer and Seamless Gait Transitions</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+</body>
+</html>
